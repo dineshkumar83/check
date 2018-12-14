@@ -1,0 +1,15 @@
+1.sudo service mysqld stop
+2. sudo cp -rap /var/lib/mysql /data/mysql
+3. sudo chown mysql.mysql /data/mysql
+4. sudo nano /etc/my.cnf
+    Change From:
+		datadir=/var/lib/mysql
+		socket=/var/lib/mysql/mysql.sock
+
+Change To: 
+		datadir=/data/mysql
+		socket=/data/mysql/mysql.sock
+		
+5. sudo service mysqld start
+6. sudo sudo
+7. ln -s /data/mysql/mysql.sock /var/lib/mysql/mysql.sock

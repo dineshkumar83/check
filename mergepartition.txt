@@ -1,0 +1,54 @@
+ df -Th
+  922  pvscan
+  923  lsblk
+  924  pvcreate /dev/sdb
+  925  vgs
+  926  vgextend centos /dev/sdb
+  927  vgs
+  928  df -h
+  929  lvextend -L+100 /dev/mapper/centos-root
+  930  lvextend -L+400 /dev/mapper/centos-data 
+  931  df -Th
+  932  xfs-growfs /dev/mapper/centos-data
+  933  xfs_growfs /dev/mapper/centos-data
+  934  xfs_growfs /dev/mapper/centos-root 
+  935  df -h
+  936  lvextend -L+400GB /dev/mapper/centos-data 
+  937  lvextend -L+100GB /dev/mapper/centos-root
+  938  xfs_growfs /dev/mapper/centos-root 
+  939  xfs_growfs /dev/mapper/centos-data 
+  940  df -h
+  941  init 6
+  942  ping 192.168.10.1
+  943  service network restart
+  944  mii-tool
+  945  init 6
+  946  /etc/init.d/network restart
+  947  systemctl network.service
+  948  cd /etc/sysconfig/network-scripts/
+  949  ls
+  950  /etc/init.d/network status
+  951  systemctl restart networking
+  952  systemctl restart network
+  953  init 0
+  954  ping 192.168.10.1
+  955  cd /etc/sysconfig/network-scripts/
+  956  ls
+  957  service network restart
+  958  journalctl -u NetworkManager.service
+  959  cat ifcfg-eno16777728
+  960  up ifcfg-eno16777728
+  961  ifup ifcfg-eno16777728
+  962  ls
+  963  ifdown ifcfg-eno16777728
+  964  ifup ifcfg-Wired_connection_1 
+  965  service network restart
+  966  cat ifcfg-Wired_connection_1 
+  967  cat ifcfg-eno16777728
+  968  vi ifcfg-Wired_connection_1 
+  969  ifdown ifcfg-Wired_connection_1 
+  970  ifup ifcfg-Wired_connection_1 
+  971  service network restrat
+  972  service network restart
+  973  service network stop
+  974  service network start
